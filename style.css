@@ -1,11 +1,36 @@
 
-.sidebar {
+.desktopOptions {
     display: none;
+}
+
+.mobileOptions {
+    display: flex;
+}
+
+.btn, .btn:focus {
+    color: lightgrey;
+    background-color: #222222;
+}
+
+.btn:hover {
+    color: white;
+}
+
+a {
+    color: grey;
 }
 
 @media (min-width: 768px) {
     body {
       padding-top: 70px;
+    }
+
+    .desktopOptions {
+        display: block;
+    }
+
+    .mobileOptions {
+        display: none;
     }
 
     .sidebar {
@@ -29,9 +54,12 @@
 
 .selectedCategory {
     color: #fff;
-    background-color: grey;
 }
 
-a {
-    color: grey;
+@media (max-width: 767px) {
+    .active {
+        color: white;
+        background-color: #428bca;
+    }
 }
+
