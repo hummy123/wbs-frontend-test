@@ -43,7 +43,6 @@
                 let last = null;
 
                 for (const entry of rowValues) {
-                    console.log(entry)
                     const row = document.createElement("tr");
                     const cell1 = document.createElement("td");
                     const cell2 = document.createElement("td");
@@ -104,36 +103,27 @@
 
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top collapse navbar-collapse">
-        <div id="navbar" class="navbar-collapse collapse">
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav nav">
-                    <li name="category" data-cat="scores" class="nav-item active"><a class="nav-link"
-                            href="#">Scores</a>
-                    </li>
-                    <li name="category" data-cat="wacc" class="nav-item"><a class="nav-link" href="#">WACC</a>
-                    </li>
-                    <li name="category" data-cat="factory_utilization" class="nav-item"><a class="nav-link"
-                            href="#">Factory
-                            Utilisation</a></li>
-                    <li name="category" data-cat="employee_engagement" class="nav-item"><a class="nav-link"
-                            href="#">Employee
-                            Engagement</a></li>
-                    <li name="category" data-cat="interest_coverage" class="nav-item"><a class="nav-link"
-                            href="#">Interest
-                            Coverage</a></li>
-                    <li name="category" data-cat="marketing_spend_rev" class="nav-item"><a class="nav-link"
-                            href="#">Cumulative
-                            Marketing Spend/Rev</a>
-                    </li>
-                    <li name="category" data-cat="e_cars_sales" class="nav-item"><a class="nav-link" href="#">eCar
-                            Sales</a>
-                    </li>
-                    <li name="category" data-cat="co2_penalty" class="nav-item"><a class="nav-link" href="#">CO2
-                            Penalty</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <ul class="collapse navbar-collapse navbar-nav nav">
+            <li name="category" data-cat="scores" class="nav-item active"><a class="nav-link" href="#">Scores</a>
+            </li>
+            <li name="category" data-cat="wacc" class="nav-item"><a class="nav-link" href="#">WACC</a>
+            </li>
+            <li name="category" data-cat="factory_utilization" class="nav-item"><a class="nav-link" href="#">Factory
+                    Utilisation</a></li>
+            <li name="category" data-cat="employee_engagement" class="nav-item"><a class="nav-link" href="#">Employee
+                    Engagement</a></li>
+            <li name="category" data-cat="interest_coverage" class="nav-item"><a class="nav-link" href="#">Interest
+                    Coverage</a></li>
+            <li name="category" data-cat="marketing_spend_rev" class="nav-item"><a class="nav-link" href="#">Cumulative
+                    Marketing Spend/Rev</a>
+            </li>
+            <li name="category" data-cat="e_cars_sales" class="nav-item"><a class="nav-link" href="#">eCar
+                    Sales</a>
+            </li>
+            <li name="category" data-cat="co2_penalty" class="nav-item"><a class="nav-link" href="#">CO2
+                    Penalty</a>
+            </li>
+        </ul>
     </nav>
     <div class="container-fluid">
         <nav class="col-sm-3 col-md-2 sidebar">
