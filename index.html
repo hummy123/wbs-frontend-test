@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style.css">
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script>
-        var UNITS = {
+        const UNITS = {
             "wacc": "%",
             "scores": "",
             "factory_utilization": "%",
@@ -43,20 +43,22 @@
                 let last = null;
 
                 for (const entry of rowValues) {
+                    console.log(entry)
                     const row = document.createElement("tr");
                     const cell1 = document.createElement("td");
                     const cell2 = document.createElement("td");
                     const cell3 = document.createElement("td");
 
-                    cell1.textContent = rank
-                    cell2.textContent = entry.team
-                    cell3.textContent = entry.value
+                    cell1.textContent = rank;
+                    cell2.textContent = TEAM_NAMES[entry.team - 1];
+                    cell3.textContent = `${entry.value}${UNITS[catValue]}`
 
-                    row.appendChild(cell1)
-                    row.appendChild(cell2)
-                    row.appendChild(cell3)
+                    row.appendChild(cell1);
+                    row.appendChild(cell2);
+                    row.appendChild(cell3);
 
-                    table.appendChild(row)
+                    table.appendChild(row);
+                    rank += 1;
                 }
             })
         }
@@ -98,21 +100,6 @@
             }
         })
     </script>
-
-    <!--[if gte mso 9]><xml>
-<mso:CustomDocumentProperties>
-<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Edie, David</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
-<mso:Order msdt:dt="string">62700.0000000000</mso:Order>
-<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
-<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
-<mso:SharedWithUsers msdt:dt="string"></mso:SharedWithUsers>
-<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Edie, David</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
-<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
-<mso:ContentTypeId msdt:dt="string">0x0101000C357A5CC01DFC45915F96982FADA930</mso:ContentTypeId>
-<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
-<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
-</mso:CustomDocumentProperties>
-</xml><![endif]-->
 </head>
 
 <body>
@@ -149,33 +136,28 @@
         </div>
     </nav>
     <div class="container-fluid">
-        <div class="row">
-            <nav class="col-sm-3 col-md-2 sidebar">
-                <ul class="nav">
-                    <li><a name="day" class="selectedDay" data-day="2020-06-19" href="#">Day 1</a></li>
-                    <li><a name="day" data-day="2020-06-20" href="#">Day 2</a></li>
-                    <li><a name="day" data-day="2020-06-21" href="#">Day 3</a></li>
-                    <li><a name="day" data-day="2020-06-23" href="#">Day 4</a></li>
-                    <li><a name="day" data-day="2020-06-24" href="#">Day 5</a></li>
-                    <li><a name="day" data-day="2020-06-25" href="#">Day 6</a></li>
-                </ul>
-            </nav>
+        <nav class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav">
+                <li><a name="day" class="selectedDay" data-day="2020-06-19" href="#">Day 1</a></li>
+                <li><a name="day" data-day="2020-06-20" href="#">Day 2</a></li>
+                <li><a name="day" data-day="2020-06-21" href="#">Day 3</a></li>
+                <li><a name="day" data-day="2020-06-23" href="#">Day 4</a></li>
+                <li><a name="day" data-day="2020-06-24" href="#">Day 5</a></li>
+                <li><a name="day" data-day="2020-06-25" href="#">Day 6</a></li>
+            </ul>
+        </nav>
 
-            <div class="table-responsive">
-                <div class="table-responsive col-sm-9 col-sm-offset-3 col-md-offset-2">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Rank</th>
-                                <th>Team</th>
-                                <th>Value</th>
-                            </tr>
-                        </thead>
-                        <tbody id="myData">
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+        <div class="table-responsive col-sm-9 col-md-offset-2">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Team</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody id="myData" />
+            </table>
         </div>
     </div>
 </body>
